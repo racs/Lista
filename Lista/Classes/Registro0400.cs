@@ -22,7 +22,7 @@ namespace Lista.Classes
 
 
 
-        public void MostrarTodosRegistros(string caminhoarquivo)
+        public new void MostrarTodosRegistros(string caminhoarquivo)
         {
             string pathfile = caminhoarquivo;
             StreamReader sr = new StreamReader(pathfile);
