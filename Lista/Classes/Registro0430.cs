@@ -27,7 +27,7 @@ namespace Lista.Classes
         public string Proc_Motv_Nao_Exig;
 
 
-        public void MostrarTodosRegistros(string caminhoarquivo)
+        public new void MostrarTodosRegistros(string caminhoarquivo)
         {
             string pathfile = caminhoarquivo;
             StreamReader sr = new StreamReader(pathfile);
