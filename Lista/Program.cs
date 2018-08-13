@@ -31,7 +31,7 @@ namespace Lista
             
             numerodelinhas = (re.Matches(stringReader).Count + 1);
             
-            for (int i = 1; i <= numerodelinhas; i++) 
+            for (int i = 1; i <= numerodelinhas+1; i++) 
             {
                 switch (reg.RetornaTipoRegistro(i, pathfile))
                 {
@@ -53,7 +53,7 @@ namespace Lista
             }
 
 
-            for (int i = 1; i <= numerodelinhas; i++)
+            for (int i = 1; i <= numerodelinhas+1; i++)
             {
 
 
