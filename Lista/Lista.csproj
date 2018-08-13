@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Registro.cs" />
+    <Compile Include="Classes\Registro0000.cs" />
     <Compile Include="Classes\Registro0400.cs" />
     <Compile Include="Classes\Registro0430.cs" />
     <Compile Include="Program.cs" />
