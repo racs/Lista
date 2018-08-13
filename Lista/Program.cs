@@ -15,9 +15,11 @@ namespace Lista
         static void Main(string[] args)
         {
             Registro reg = new Registro();
+            Registro0000 reg0000 = new Registro0000();
             Registro0400 reg0400 = new Registro0400();
             Registro0430 reg0430 = new Registro0430();
-            string pathfile = "D:\\teste.txt";            
+            string pathfile = "D:\\teste.txt";
+            List<Registro0000> listaderegistros0000 = new List<Registro0000>();
             List<Registro0400> listaderegistros0400 = new List<Registro0400>();
             List<Registro0430> listaderegistros0430 = new List<Registro0430>();
             string caminhoarquivosaida = "D:\\testeescrita.txt";
@@ -35,6 +37,12 @@ namespace Lista
             {
                 switch (reg.RetornaTipoRegistro(i, pathfile))
                 {
+                    case "0000":
+                        {
+                            listaderegistros0000.Add(reg0000.RetornaRegistro(i, pathfile));
+
+                            break;
+                        }
                     case "0400":
                         {
                             listaderegistros0400.Add(reg0400.RetornaRegistro(i, pathfile));
@@ -55,7 +63,18 @@ namespace Lista
 
             for (int i = 1; i <= numerodelinhas+1; i++)
             {
+                foreach (Registro0000 r in listaderegistros0000)
+                {
+                    if (r.num_linha == i.ToString())
+                    {
 
+
+                        Console.WriteLine(r.num_linha + "|" + r.reg + "|" + r.CNPJ + "|" + r.Nome + "|" + r.Tipo_Inti + "|" + r.Cod_Munc + "|" + r.Ano_Mes_Inic_Cmpe
+                            + "|" + r.Ano_Mes_Fim_Cmpe + "|" + r.Modu_Decl + "|" + r.Tipo_Decl + "|" + r.Prtc_Decl_Ante + "|" + r.Tipo_Cnso + "|" + r.CNPJ_Resp_Rclh + "|" + r.Idn_Versao + "|" + r.Tipo_Arred);
+
+
+                    }
+                }
 
                 foreach (Registro0400 r in listaderegistros0400)
                 {
@@ -83,6 +102,7 @@ namespace Lista
             }
             //sw.Close();
             Console.WriteLine();
+            Console.WriteLine("Quantidade de registros 0000 adicionados " + listaderegistros0000.Count);
             Console.WriteLine("Quantidade de registros 0400 adicionados " + listaderegistros0400.Count);
             Console.WriteLine("Quantidade de registros 0430 adicionados " + listaderegistros0430.Count);
             Console.ReadLine();
