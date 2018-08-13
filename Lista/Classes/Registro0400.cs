@@ -7,10 +7,8 @@ using System.IO;
 
 namespace Lista.Classes
 {
-    class Registro0400
+    class Registro0400 : Registro
     {
-        public string num_linha;
-        public string reg;
         public string cod_depe;
         public string indr_insc_munl;
         public string cnpj_proprio;
